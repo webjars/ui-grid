@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>ui-grid</artifactId>
-    <version>3.0.0-rc.11</version>
+    <version>3.0.0-rc.11-SNAPSHOT</version>
     <name>ui-grid</name>
     <description>WebJar for ui-grid</description>
     <url>http://webjars.org</url>
@@ -19,15 +19,15 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <upstream.version>3.0.0-rc.11</upstream.version>
-        <upstream.url>https://github.com/angular-ui/ui-grid.info/archive/v3.0.0-rc.11.zip</upstream.url>
+        <upstream.url>https://github.com/angular-ui/ui-grid.info/archive/v${upstream.version}.zip</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${version}</destDir>
         <requirejs>
             {
                 "paths": {
-                    "WEBJAR_ID": "WEBJAR_ID"
+                    "ui-grid": "ui-grid"
                 },
                 "shim": {
-                    "WEBJAR_ID": ["DEP_ID"]
+                    "ui-grid": ["angular"]
                 }
             }
         </requirejs>
@@ -82,7 +82,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/ui-grid.info-${upstream.version}" />
+                                    <fileset dir="${project.build.directory}/ui-grid.info-${upstream.version}/release/${upstream.version}" />
                                 </move>
                             </target>
                         </configuration>
