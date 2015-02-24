@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>ui-grid</artifactId>
-    <version>3.0.0-rc.20-SNAPSHOT</version>
+    <version>3.0.0-rc.20</version>
     <name>ui-grid</name>
     <description>WebJar for ui-grid</description>
     <url>http://webjars.org</url>
@@ -53,7 +53,7 @@
         <url>http://github.com/webjars/ui-grid</url>
         <connection>scm:git:https://github.com/webjars/ui-grid.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/ui-grid.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>ui-grid-3.0.0-rc.20</tag>
     </scm>
     
     <dependencies>
@@ -76,13 +76,13 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="download archive"/>
-                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip"/>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="download archive" />
+                                <get src="${upstream.url}" dest="${project.build.directory}/${project.artifactId}.zip" />
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/ui-grid.info-${upstream.version}/release/${upstream.version}"/>
+                                    <fileset dir="${project.build.directory}/ui-grid.info-${upstream.version}/release/${upstream.version}" />
                                 </move>
                             </target>
                         </configuration>
