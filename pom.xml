@@ -18,7 +18,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>3.0.0-rc.20</upstream.version>
+        <upstream.version>3.0.0-rc.21</upstream.version>
         <upstream.url>https://github.com/angular-ui/ui-grid.info/archive/v${upstream.version}.zip</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${version}</destDir>
         <requirejs>
