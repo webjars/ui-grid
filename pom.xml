@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>ui-grid</artifactId>
-    <version>3.1.1-SNAPSHOT</version>
+    <version>3.1.1</version>
     <name>ui-grid</name>
     <description>WebJar for ui-grid</description>
     <url>http://webjars.org</url>
@@ -53,7 +53,7 @@
         <url>http://github.com/webjars/ui-grid</url>
         <connection>scm:git:https://github.com/webjars/ui-grid.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/ui-grid.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>ui-grid-3.1.1</tag>
     </scm>
     
     <dependencies>
