@@ -11,16 +11,15 @@
     <packaging>jar</packaging>
     <groupId>org.webjars</groupId>
     <artifactId>ui-grid</artifactId>
-    <version>3.1.2-SNAPSHOT</version>
+    <version>3.2.5-SNAPSHOT</version>
     <name>ui-grid</name>
     <description>WebJar for ui-grid</description>
     <url>http://webjars.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>3.1.1</upstream.version>
-        <upstream.url>https://github.com/angular-ui/ui-grid.info/archive/v${upstream.version}.zip</upstream.url>
-        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${version}</destDir>
+        <upstream.url>https://github.com/angular-ui/ui-grid.info/archive/v${version.unsnapshot}.zip</upstream.url>
+        <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
             {
                 "paths": {
@@ -67,6 +66,20 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>com.jamesward</groupId>
+                <artifactId>unsnapshot-maven-plugin</artifactId>
+                <version>0.2</version>
+                <executions>
+                    <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unsnapshot</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.7</version>
@@ -82,7 +95,7 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/ui-grid.info-${upstream.version}/release/${upstream.version}" />
+                                    <fileset dir="${project.build.directory}/ui-grid.info-${version.unsnapshot}/release/${version.unsnapshot}" />
                                 </move>
                             </target>
                         </configuration>
